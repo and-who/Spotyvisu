@@ -3,6 +3,7 @@ import { useColor } from 'color-thief-react'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import ProgressBar from '../ProgressBar'
 import {PLAYER_RESUME_URL, PLAYER_PAUSE_URL} from '../../config';
+import { getColor } from '../../tools/colors';
 
 const TrackInfo = (props) => {
   const {player} = props
@@ -23,6 +24,11 @@ const TrackInfo = (props) => {
   }
 
   const {data} = useColor(`https://i.scdn.co/image/${player.image.key}`, 'hex', { crossOrigin: 'anonymous'})
+
+  if(player.image.key){
+    getColor(`https://i.scdn.co/image/${player.image.key}`)
+  }
+  
   return (
     <div onClick={onPlayPause} className="TrackInfo">
       <div className="TrackInfo__art">
