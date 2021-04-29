@@ -1,8 +1,18 @@
 import { useColor } from 'color-thief-react'
+import {PLAYER_NEXT_URL} from '../../config';
+
+const skipTracks = (numTracks) => {
+  fetch(PLAYER_NEXT_URL).then(()=>{
+    if(numTracks>1){
+      skipTracks(numTracks-1)
+    }
+  })
+
+}
 
 const buildTrackCard= (track,index) => {
   return (
-    <div key={track.track.name} onClick={()=>{console.log(`Next ${index}`)}} style={{backgroundColor: track.color}} className="NextSongs__card">
+    <div key={track.track.name} onClick={()=>{skipTracks(index+1)}} style={{backgroundColor: track.color}} className="NextSongs__card">
           <img src={`https://i.scdn.co/image/${track.image.key}`} className="NextSongs__card-art" alt="art" />
           <div className="NextSongs__card-text">
             <h2 className="NextSongs__infos-track">{track.track.name}</h2>

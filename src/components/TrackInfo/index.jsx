@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useColor } from 'color-thief-react'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled';
 import ProgressBar from '../ProgressBar'
