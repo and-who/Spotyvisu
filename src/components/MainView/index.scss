@@ -1,0 +1,16 @@
+.MainView{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__tack{
+    flex-grow: 1;
+    flex-shrink: 1;
+  }
+  &__next{
+    flex-grow: 0;
+  }
+  &__volume{
+    flex-grow: 0;
+  }
+}
