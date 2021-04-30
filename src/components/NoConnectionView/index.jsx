@@ -22,7 +22,7 @@ const NoConnectionView = () => {
   return (
     <div className="NoConnectionView">
       <h1 className="NoConnectionView__time">{timeString}</h1>
-      <p className="NoConnectionView__text">Verbinde dich über Spotify - <img className="NoConnectionView__logo" src={logo} alt="logo" /></p>
+      <p className="NoConnectionView__text">Verbinde dich über Spotify <img className="NoConnectionView__logo" src={logo} alt="logo" /></p>
     </div>
   );
 }
