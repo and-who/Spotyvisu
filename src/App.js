@@ -9,6 +9,9 @@ function App() {
 
   const [player, setPlayer] = useState()
 
+  const [timeStamp, setTimeStamp] = useState(0)
+  const [idleCount, setIdleCount] = useState(0)
+
   const fetchPlayer = () => {
     fetch(PLAYER_URL)
     .then(response => response.json())
@@ -19,9 +22,19 @@ function App() {
 
   useEffect(() =>{
     let interval = setInterval(() => {fetchPlayer()}, 1000)
-    //destroy interval on unmount
     return () => clearInterval(interval)
   })
+
+  useEffect(() => {
+    if(player && (player.trackTime !== timeStamp)){
+      setTimeStamp(player.trackTime);
+      setIdleCount(0);
+    } else {
+      setIdleCount(idleCount+1);
+    }
+  },[player])
+
+
 
   const theme = createMuiTheme({
     palette: {
@@ -38,7 +51,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        {player ? <MainView player={player}/> : <NoConnectionView /> }
+        {player && !(idleCount>(60*60)) ? <MainView player={player}/> : <NoConnectionView /> }
       </ThemeProvider>
     </div>
   );
