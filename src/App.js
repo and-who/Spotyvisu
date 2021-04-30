@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import MainView from './components/MainView';
 import {PLAYER_URL} from './config';
+import NoConnectionView from './components/NoConnectionView';
 
 
 function App() {
@@ -37,7 +38,7 @@ function App() {
   return (
     <div className="App">
       <ThemeProvider theme={theme}>
-        {player ? <MainView player={player}/> : <h1>Not Connected</h1> }
+        {player ? <MainView player={player}/> : <NoConnectionView /> }
       </ThemeProvider>
     </div>
   );
