@@ -8,12 +8,16 @@ import { getColor } from '../../tools/colors';
 const TrackInfo = (props) => {
   const {player} = props
 
-  const prevTrackTimeRef = useRef();
+  const firstTrackTimeRef = useRef();
+  const secondTrackTimeRef = useRef();
   useEffect(() => {
-    prevTrackTimeRef.current = player.trackTime;
+    secondTrackTimeRef.current = firstTrackTimeRef.current
+    firstTrackTimeRef.current = player.trackTime;
   });
-  const prevTrackTime = prevTrackTimeRef.current;
-  const isPaused = prevTrackTime === player.trackTime
+
+  const firstTrackTime = firstTrackTimeRef.current;
+  const secondTrackTime = secondTrackTimeRef.current;
+  const isPaused = firstTrackTime === player.trackTime && secondTrackTime === player.trackTime
 
   const onPlayPause = () =>  {
     if(isPaused) {
