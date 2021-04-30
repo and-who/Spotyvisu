@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/Spotyvisu/static/css/main.3fc7cba1.chunk.css",
-    "main.js": "/Spotyvisu/static/js/main.cd43e579.chunk.js",
-    "main.js.map": "/Spotyvisu/static/js/main.cd43e579.chunk.js.map",
+    "main.css": "/Spotyvisu/static/css/main.f0da4078.chunk.css",
+    "main.js": "/Spotyvisu/static/js/main.d8eb95d7.chunk.js",
+    "main.js.map": "/Spotyvisu/static/js/main.d8eb95d7.chunk.js.map",
     "runtime-main.js": "/Spotyvisu/static/js/runtime-main.ce1c7f06.js",
     "runtime-main.js.map": "/Spotyvisu/static/js/runtime-main.ce1c7f06.js.map",
     "static/js/2.bed2c997.chunk.js": "/Spotyvisu/static/js/2.bed2c997.chunk.js",
@@ -10,14 +10,14 @@
     "static/js/3.b7c1795d.chunk.js": "/Spotyvisu/static/js/3.b7c1795d.chunk.js",
     "static/js/3.b7c1795d.chunk.js.map": "/Spotyvisu/static/js/3.b7c1795d.chunk.js.map",
     "index.html": "/Spotyvisu/index.html",
-    "static/css/main.3fc7cba1.chunk.css.map": "/Spotyvisu/static/css/main.3fc7cba1.chunk.css.map",
+    "static/css/main.f0da4078.chunk.css.map": "/Spotyvisu/static/css/main.f0da4078.chunk.css.map",
     "static/js/2.bed2c997.chunk.js.LICENSE.txt": "/Spotyvisu/static/js/2.bed2c997.chunk.js.LICENSE.txt",
     "static/media/spotify.7ef0c8a2.png": "/Spotyvisu/static/media/spotify.7ef0c8a2.png"
   },
   "entrypoints": [
     "static/js/runtime-main.ce1c7f06.js",
     "static/js/2.bed2c997.chunk.js",
-    "static/css/main.3fc7cba1.chunk.css",
-    "static/js/main.cd43e579.chunk.js"
+    "static/css/main.f0da4078.chunk.css",
+    "static/js/main.d8eb95d7.chunk.js"
   ]
 }
