@@ -1,7 +1,10 @@
+
+
 const Vibrant = require('node-vibrant');
 
-export const getColor = (path) => {
+export const getColor = async (path) => {
   let v = new Vibrant(path)
-  v.getPalette().then((palette) => console.log(palette))
-  console.log(v)
+  const result = await v.getPalette()
+  const color = result.Vibrant.getHex()
+  return color
 }

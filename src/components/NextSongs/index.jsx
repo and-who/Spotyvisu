@@ -1,6 +1,7 @@
 import { useColor } from 'color-thief-react'
 import {PLAYER_NEXT_URL} from '../../config';
-
+import {  useEffect, useMemo, useState } from 'react';
+import { getColor } from '../../tools/colors';
 const skipTracks = (numTracks) => {
   fetch(PLAYER_NEXT_URL).then(()=>{
     if(numTracks>1){
@@ -25,13 +26,20 @@ const buildTrackCard= (track,index) => {
 const NextSongs = (props) => {
   const {player} = props
   const nextTracksWithColor = player.nextTracks.map(nextTrack => ({...nextTrack, color:''}))
-  const result1 = useColor(`https://i.scdn.co/image/${player.nextTracks[0].image.key}`, 'hex', { crossOrigin: 'anonymous'})
-  const result2 = useColor(`https://i.scdn.co/image/${player.nextTracks[1].image.key}`, 'hex', { crossOrigin: 'anonymous'})
+  const [color1, setColor1] = useState();
+  const [color2, setColor2] = useState();
+
+  const nextKey1 = player.nextTracks[0]?.image.key
+  const nextKey2 = player.nextTracks[1]?.image.key
+
+  useMemo(() => nextKey1 && getColor(`https://i.scdn.co/image/${nextKey1}`), [nextKey1]).then(result => setColor1(result))
+  useMemo(() => nextKey2 && getColor(`https://i.scdn.co/image/${nextKey2}`), [nextKey2]).then(result => setColor2(result))
+
   if(nextTracksWithColor.length > 0){
-    nextTracksWithColor[0].color=result1.data
+    nextTracksWithColor[0].color=color1
 
     if(nextTracksWithColor.length > 1){
-      nextTracksWithColor[1].color=result2.data
+      nextTracksWithColor[1].color=color2
     }
   }
   
